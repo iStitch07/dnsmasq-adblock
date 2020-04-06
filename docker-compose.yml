@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  dnsmasq-adblock:
+    container_name: dnsmasq-adblock
+    image: istitch07/dnsmasq-adblock
+    restart: unless-stopped
+    ports:
+      - 53:53/udp
+    privileged: true
+
