@@ -9,9 +9,9 @@ VOLUME /opt/dnsmasq
 
 WORKDIR /opt/dnsmasq
 
-COPY conf/dnsmasq.conf /opt/dnsmasq/
-COPY conf/hosts /opt/dnsmasq/
-COPY conf/dnsmasq-adblock.conf /opt/dnsmasq/
-COPY conf/dnsmasq-admanual.conf /opt/dnsmasq/
+COPY conf/dnsmasq.conf /opt/dnsmasq/dnsmasq.conf
+COPY conf/hosts /opt/dnsmasq/hosts
+COPY conf/dnsmasq-adblock.conf /opt/dnsmasq/dnsmasq-adblock.conf
+COPY conf/dnsmasq-admanual.conf /opt/dnsmasq/dnsmasq-admanual.conf
 
 ENTRYPOINT ["dnsmasq", "-C", "dnsmasq.conf"]
