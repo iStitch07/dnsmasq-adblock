@@ -5,7 +5,9 @@ services:
     container_name: dnsmasq-adblock
     image: istitch07/dnsmasq-adblock
     restart: unless-stopped
+    volumes:
+      - ./conf:/opt/dnsmasq
     ports:
       - 53:53/udp
-    privileged: true
-
+    cap_add:
+      - NET_ADMIN
